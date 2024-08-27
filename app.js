@@ -1,7 +1,7 @@
-const textArea = document.querySelector('#textoingreso');  // Selección de los elementos usando querySelector
-const resultArea = document.querySelector('#resultado'); // entradas y salidas linea 1 y2
+const textoingreso = document.querySelector('#textoingreso');  
+const textoencrip = document.querySelector('#textoEncrip'); 
   
-const encryptionMap = {// Encriptacion y desencriptacion
+const encriptar = {
   "a": "ai",
   "e": "enter",
   "i": "imes",
@@ -9,7 +9,7 @@ const encryptionMap = {// Encriptacion y desencriptacion
   "u": "ufat"
 };
 
-const decryptionMap = {
+const desencriptar = {
   "ai": "a",
   "enter": "e",
   "imes": "i",
@@ -17,28 +17,29 @@ const decryptionMap = {
   "ufat": "u"
 };
 
-const encryptText = (text) => {// lineas para encriptar y desencripta 21 a 27
-  return text.replace(/[aeiou]/g, (match) => encryptionMap[match]);
+const encryptText = (text) => {
+  return text.replace(/[aeiou]/g, (match) => encriptar[match]);
 };
 
 const decryptText = (text) => {
-  return text.replace(/ai|enter|imes|ober|ufat/g, (match) => decryptionMap[match]);
+  return text.replace(/ai|enter|imes|ober|ufat/g, (match) => desencriptar[match]);
 };
 
-const copiarContenido = () => {// Función para copiar,pegar y borrar lineas 37 a 51
-  navigator.clipboard.writeText(resultArea.value)
-    .then(() => alert('Tu texto fue copiado'))
-    .catch(err => console.error('No pude compiar tu texto T_T: ', err));
+const copiarTexto = () => {
+  navigator.clipboard.writeText(textoencrip.value)
+    .then(() => alert('Texto copiado'))
+    .catch(err => console.error('error: ', err));
 };
 
 
 document.querySelector('.btn[onclick*="Encriptar"]').addEventListener('click', () => {
-  const textoEncriptado = encryptText(textArea.value);
-  resultArea.value = textoEncriptado;
+  const textoEncriptado = encryptText(textoingreso.value);
+  textoencrip.value = textoEncriptado;
   document.getElementById("btnCopiar").style.display = "block";
 });
+
 document.querySelector('.btn[onclick*="Desencriptar"]').addEventListener('click', () => {
-  const textoDesencriptado = decryptText(textArea.value);
-  resultArea.value = textoDesencriptado;
+  const textoDesencriptado = decryptText(textoingreso.value);
+  textoencrip.value = textoDesencriptado;
 });
-document.querySelector('.btnCopiar[onclick*="copiarContenido"]').addEventListener('click', copiarContenido);
+document.querySelector('.btnCopiar[onclick*="copiarTexto"]').addEventListener('click', copiarTexto);

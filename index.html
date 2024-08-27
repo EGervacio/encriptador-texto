@@ -12,19 +12,19 @@
     </header>
     <main>
         <section class="content">
-            <div class="Seccion__entrada">
+            <div class="seccionIngreso">
                 <textArea class="textoIngreso" name="Texto" id="textoingreso" placeholder="Ingrese su texto aquí..."></textArea>
-                <div class="info">
-                    <p class="info2">Solo letras minúsculas y sin acentos</p>
+                <div >
+                    <p><img class="info" src="assets/info.png"> letras minúsculas y sin acentos</p>
                 </div>
                 <div class="btnArea">
                     <button class="btn btnEncrip" type="button" onclick="Encriptar()">Encriptar</button>
                     <button class="btn btnDesencrip" type="button" onclick="Desencriptar()">Desencriptar</button>
                 </div>
             </div>
-            <div class="Seccion__resultado">
-                <textArea class="resultado" readonly name="Res" id="resultado" placeholder=></textArea>
-                <button class="btn btnCopiar" id="btnCopiar" type="button" onclick="copiarContenido()" hidden>Copiar</button>                
+            <div class="seccionSalida">
+                <textArea class="textoEncrip" readonly name="Res" id="textoEncrip" placeholder=></textArea>
+                <button class="btn btnCopiar" id="btnCopiar" type="button" onclick="copiarTexto()" hidden>Copiar</button>                
             </div>
         </section>
     </main>
