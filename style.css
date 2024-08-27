@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-principal: #ecf8fd;
+    --color-texto2 : #413381;
+    --fuente-montzerrat : "Montserrat", sans-serif; 
+    --fuente-krona : "Krona One", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin:0;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--color-principal)
+}
+textArea{
+    background-color:#f0f2f9;
+}
+.logo{
+    padding-top: 15px;
+    width: 140px;
+    height: 50px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 24px;
+    box-sizing: border-box;
+
+}
+
+.Seccion__entrada{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: left;
+    gap: 10px;
+}
+
+.textoIngreso{
+    width: auto;
+    height: 450PX;
+    justify-content: start;
+    align-items: flex-start;
+    font-family: var(--fuente-krona);
+    font-size:12px;
+    border-radius: 10px;
+    padding: 9px;
+}
+
+.Seccion__resultado{
+    display: flex;
+    width: 20%;
+    gap: 10px;
+    flex-direction: column;
+    background-color: #fff;
+    
+}
+.info{
+    padding: 3px;;
+}
+
+
+
+.resultado{
+    color: var(--color-texto2);
+    height: 600px;
+    width: 100%;
+    padding: 10px;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    background-image: url(assets/alura.png);
+    /* background-image: center; */
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%; 
+}
+
+.resultado:not(:placeholder-shown) {
+    background-image: none;
+}
+
+.btnArea{
+    display: flex;
+    /* justify-content: center; */
+    gap: 24px;
+    padding: 20px;
+}
+
+.btn{
+    border-radius: 24px;
+    height: 60px;
+    width: 336px;
+    height: Hug (67px)px;
+    font-family: var(--fuente-krona);
+}
+
+.btnEncrip {
+    background-color:#011e31;
+    color: #fff;
+}
+
+.btnCopiar{
+    width: 250px;
+    border-radius: 20px;
+    border-color: #011e31;
+    color: #3b4e73;
+}
+.btnCopiar:hover{
+    background-color: #3b4e73;
+    color: #ecf8fd;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #011e31;
+    padding: 10px;
+    text-align: center;
+}
+
+@media(max-width: 780px){
+
+    .CuadrosTexto{
+        flex-direction: column;
+        width: auto;
+    }
+
+    .SeccionInput{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .inputTex{
+        width: auto;
+        font-size: 1rem;
+        height: 300px;
+    }
+
+    .Seccion__resultado{
+        width: 100%;
+        height: 300px;
+        font-size: 1rem;
+
+    }
+
+    .botones{
+        width: auto;
+    }
+
+    .ResultadoTexto{
+        font-size: 1rem;
+    }
+
+}
